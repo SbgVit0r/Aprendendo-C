@@ -13,11 +13,15 @@ int main() {
     printf("|_____| ' _ ' |_____|                        \n");
     printf("      \\__|_|__/");
     printf("\n\n");
+
+    // Criação da variavel segundos passando um time(0) para gerar numeros aleatorios com srand
     int segundos = time(0);
     srand(segundos);
-    int numerogrande = rand();
 
+    // Gera um numero inteiro entre 0 e 100
+    int numerogrande = rand();
     int numerosecreto = numerogrande % 101;
+
     int chute;
     int tentativas = 1;
     int pontos = 1000;
@@ -55,6 +59,7 @@ int main() {
         printf("\n");
         printf("Qual o seu chute? \n");
 
+        // Escaneia o valor passado pelo usuario e o imprime na tela
         scanf("%d", &chute);
         printf("\n");
         printf("Seu chute foi %d\n", chute);
@@ -77,6 +82,7 @@ int main() {
             printf("Seu chute foi menor que o numero secreto\n");
         }
         
+        // Desconta os pontos do jogador conforme as tentativas de acertar o numero aumentam
         int pontosperdidos = (chute - numerosecreto)  / 2;
         pontos = pontos - pontosperdidos;
         tentativas++;
